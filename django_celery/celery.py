@@ -5,3 +5,8 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "django_celery.settings")
 app = Celery("django_celery")
 app.config_from_object("django.conf:settings", namespace="CELERY")
 app.autodiscover_tasks()
+
+
+@app.task(bind=True)
+def hello_world(self):
+    print('Hello world!')
