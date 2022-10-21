@@ -1,0 +1,4 @@
+dump.rdb
+venv
+*.pyc
+__pycache__
